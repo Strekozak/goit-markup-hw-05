@@ -87,12 +87,25 @@ img {
     display: block;
     padding-top: 24px;
     padding-bottom: 24px;
+    position: relative;
 
     color: var(--color-navy-blue);
     font-family: Roboto, sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.current::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: var(--color-ocean);
+    border-radius: 2px;
+    left: 0px;
+    bottom: -1px;  
 }
 
 .contact {
@@ -110,6 +123,8 @@ img {
     font-size: 16px;
     line-height: 1.5;
     font-style: normal;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
@@ -178,13 +193,14 @@ img {
     cursor: pointer;
     border: none;
     border-radius: 4px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
     background-color: var(--color-ocean);
-    border: none;
-    border-radius: 4px;
+   
 }
 
 /* Features */
@@ -289,6 +305,8 @@ img {
     border-radius: 50%;
     background-color: var(--color-iris);
     color: var(--color-cloud);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover,
 .social-link:focus {
@@ -336,6 +354,8 @@ img {
     border: 1px solid var(--color-light-slate);
     border-radius: 4px;
     color: var(--color-light-slate);
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-link:hover,
 .customers-link:focus {   
@@ -363,6 +383,9 @@ img {
     cursor: pointer;
     border: 1px solid var(--color-cornflower);
     border-radius: 4px;
+    box-shadow: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn:hover,
@@ -373,7 +396,7 @@ img {
     background-color: var(--color-ocean);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     border: 1px solid transparent;
-    border-radius: 4px;    
+        
 }
 
 .projects .text-color {
@@ -415,12 +438,30 @@ img {
 .examples-item {
     flex-basis: calc((100% - 48px) / 3);
 }
+.examples-box {
+    position: relative;
+}
 .examples-link {
     display: block;
 }
 .examples-link:hover,
 .examples-link:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.examples-pic {
+ 
+}
+.examples-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 32px 164px 32px;
+    color: var(--color-cloud);
+    /* Тимчасово!!! поміняти на макетні */
+    background-color: rgba(77, 90, 229, 0.2);
+    backdrop-filter: blur(3px);
 }
 
 /* Footer */
@@ -484,6 +525,8 @@ img {
         border-radius: 50%;
         background-color: var(--color-iris);
         color: var(--color-cloud);
+
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .footer-social-link:hover,
